@@ -1,4 +1,6 @@
-# Random Variable
+# Random Variable and Distribution
+
+## Random Variable
 
 * A random variable is a numerical measure of the outcomes of an experiment.
 * Each value of a random variable is associated with a probability.
@@ -13,32 +15,32 @@ P(X =0) = P(TT) = 1/4,
 P(X =1) = P(HT ,TH) = 2/4,
 P(X =2) = P(HH) = 1/4.
 
-## Types
+### Types of Random Variables
 
 Random Variables are of two types:
 
-**Discrete Random Variable** takes only a countable (finite or countably inﬁnite) number of values.
+1. **Discrete Random Variable** takes only a countable (finite or countably inﬁnite) number of values.
 Eg.
 
-* No. of accounts opened, no. of cars sold,
-* Friday night attendance at a cinema,
-* no. of defective bulbs in a box etc.
+   * No. of accounts opened, no. of cars sold,
+   * Friday night attendance at a cinema,
+   * no. of defective bulbs in a box etc.
 
-The range set of a discrete random variable X, Rx = {collection of all possible values of X} is countable.
+   The range set of a discrete random variable X, Rx = {collection of all possible values of X} is countable.
 
-**Continuous Random Variable** takes on any values within an interval.
+2. **Continuous Random Variable** takes on any values within an interval.
 Eg.
 
-* Weight of fertilizer packed in a bag.
-* the amount of sugar in an orange,
-* the time required to run a mile,
-* price of a stock etc.
+   * Weight of fertilizer packed in a bag.
+   * the amount of sugar in an orange,
+   * the time required to run a mile,
+   * price of a stock etc.
 
-Continuous random variable is usually a measurement. It can take an uncountably infinite number of values.
+   Continuous random variable is usually a measurement. It can take an uncountably infinite number of values.
 
-The range set of a continuous random variable X, Rx = {collection of all possible values of X} 		is an interval.
+   The range set of a continuous random variable X, Rx = {collection of all possible values of X} is an interval.
 
-## Probability Distribution of a Discrete Random Variable
+### Probability Distribution of a Discrete Random Variable
 
 In tossing two coins, if X is the random variable that counts the number of heads, then the probability distribution of X is
 
@@ -56,7 +58,7 @@ p(x) = 1/4, if x = 0
        1/4, if x = 2
 ```
 
-## Expectation of a Discrete Random Variable
+### Expectation of a Discrete Random Variable
 
 Expectation of a random variable can be interpreted as “some sort of average” of all the values that the random variable takes.
 
@@ -75,7 +77,7 @@ Then his expected gain =
 = 100/4 = 25
 ```
 
-## Variance of a Discrete Random Variable
+### Variance of a Discrete Random Variable
 
 The idea of center is not enough to summarize a probability distribution. We also need some idea of dispersion along with that.
 
@@ -93,7 +95,11 @@ p(x) is the probability mass function of X.
 
 Variance and Standard Deviation are always non-negative.
 
-## Binomial Distribution
+## Distribution
+
+A Distribution provides a distribution in terms of table or graph. Below are the Types of Distributions
+
+### Binomial Distribution
 
 Consider n independent trials of a random experiment having only two outcomes – success with probability p and failure with probability q = 1 − p.
 
@@ -121,7 +127,7 @@ P(X=a)  = binom.dist(a,n,p,0)
 P(X<=a) = binom.dist(a,n,p,1)
 ```
 
-## Poisson Distrubtion
+### Poisson Distrubtion
 
 When n -> infinity and p -> 0, we may approximate Binomial Distribution by Poisson Distribution.
 
@@ -146,7 +152,7 @@ P(X=a)  = possion.dist(a,lambda,0)
 P(X<=a) = possion.dist(a,lambda,1)
 ```
 
-## Comparision between Binomial and Poisson Distribution
+### Comparision between Binomial and Poisson Distribution
 
 * The Poisson distribution and Binomial Distribution have some similarities, but also several differences.
   * Binomial Distribution describes a distribution of two possible outcomes – Success and Failure.
@@ -155,13 +161,13 @@ P(X<=a) = possion.dist(a,lambda,1)
   * The Poisson describes the occurrence of rare events. E.g., no. of serious accidents at a chemical plant per month.
   * If the occurrences are too frequent, the time interval can be reduced enough so that the occurrences are rare.
 
-### Other Applications of Poisson
+#### Other Applications of Poisson
 
 * No. of suicides reported in a particular city
 * No. of defective items in a packing manufactured
 * No. of air accidents in some duration of time
 
-## Normal Distribution
+### Normal Distribution
 
 Normal Distribution is known by its bell Curve. Most of the characteristics follow normal distribution in real life, provided the data is sufficiently large.
 
@@ -182,7 +188,19 @@ The mean and standard deviation define the characterstic of the Normal distrubti
 
 ```Excel
 P(X<=k)= norm.dist(k,mu,sigma,TRUE) = norm.dist(k,mu,sigma,1)
+
+P(X=K) = norm.dist(k,mu,sigma,FALSE) = norm.dist(k,mu,sigma,0)
+       = 0 (always. hence doesn't make any sense to calculate)
+
+k = norm.inv(p, mu, sigma) # To calculate k if probability given.
 ```
+
+**R Formula:**
+
+```R
+k = qnorm(p,mu,sigma)
+```
+
 
 ### Using Printed table to obtain Normal Probabilities
 
