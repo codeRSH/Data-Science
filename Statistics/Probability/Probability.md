@@ -20,19 +20,17 @@
 
 * **Law of large numbers** which states that as the number of repetitions of an experiment is increased, the relative frequency obtained in the experiment tends to become closer and closer to the theoretical probability. Even though the outcomes do not happen according to any set pattern or order, overall, the long-term observed relative frequency will approach the theoretical probability.
 
-### " ∪ " Event: The Union
+## " ∪ " Event: The Union
 
-An outcome is in the event A ∪ B if the outcome is in A or is in B or is in both A and B. For example, let A = {1, 2, 3, 4,
-5} and B = {4, 5, 6, 7, 8}. A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}. Notice that 4 and 5 are NOT listed twice.
+An outcome is in the event A ∪ B if the outcome is in A or is in B or is in both A and B. For example, let A = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}. A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}. Notice that 4 and 5 are NOT listed twice.
 
-### " ∩ " Event: The Intersection
+## " ∩ " Event: The Intersection
 
-An outcome is in the event A ∩ B if the outcome is in both A and B at the same time. For example, let A and B be {1, 2,
-3, 4, 5} and {4, 5, 6, 7, 8}, respectively. Then A ∩ B = {4, 5}.
-The complement of event A is denoted A′ (read "A prime"). A′ consists of all outcomes that are NOT in A. Notice that P(A) + P(A′) = 1. For example, let S = {1, 2, 3, 4, 5, 6} and let A = {1, 2, 3, 4}. Then, A′ = {5, 6}. P(A) = 4/6 , P(A′) = 2/6 , and
-P(A) + P(A′) = 4/6 + 2/6 = 1
+An outcome is in the event A ∩ B if the outcome is in both A and B at the same time. For example, let A and B be {1, 2, 3, 4, 5} and {4, 5, 6, 7, 8}, respectively. Then A ∩ B = {4, 5}.
 
-### Conditional Probability
+The complement of event A is denoted A′ (read "A prime"). A′ consists of all outcomes that are NOT in A. Notice that P(A) + P(A′) = 1. For example, let S = {1, 2, 3, 4, 5, 6} and let A = {1, 2, 3, 4}. Then, A′ = {5, 6}. P(A) = 4/6 , P(A′) = 2/6 , and P(A) + P(A′) = 4/6 + 2/6 = 1
+
+## Conditional Probability
 
 The conditional probability of A given B is written P(A | B). P(A | B) is the probability that event A will occur given that the event B has already occurred. **A conditional reduces the sample space.** We calculate the probability of A from the reduced sample space B. The formula to calculate P(A | B) is P(A | B) = P(A ∩ B) / P(B) where P(B) is greater than zero.
 
