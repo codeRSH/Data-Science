@@ -201,7 +201,6 @@ k = norm.inv(p, mu, sigma) # To calculate k if probability given.
 k = qnorm(p,mu,sigma)
 ```
 
-
 ### Using Printed table to obtain Normal Probabilities
 
 When mean is 0 and standard deviation is 1 the area under the curve, can be obtained using normal table. Hence, for known x, you can obtain P(X<=x) i.e. the area of shaded region, from the Normal table.
