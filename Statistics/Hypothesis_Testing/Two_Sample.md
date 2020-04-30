@@ -129,7 +129,7 @@
 * Use N(0,1) to obtain critical value/ p-value.
 * In most of the problems, 𝝅 is not known, so we use the estimate of 𝝅, given by :
 
-  ![Pi Estimate](PiEstimate.png)
+  ![Pi Estimate](piestimate.png)
 
 ## Summary of Testing Strategies
 
