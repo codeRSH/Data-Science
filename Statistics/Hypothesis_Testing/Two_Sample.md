@@ -4,7 +4,7 @@
 
 * **Notations**
 
-  ![Notations](Notations.png)
+  ![Notations](images/Notations.png)
 
 * **To test**
   * H₀: μ₁ = μ₂ H₁: μ₁ ≠ μ₂
@@ -13,7 +13,7 @@
 
 ## Testing Strategy
 
-  ![Testing Strategy 2](TestingStrategy2.png)
+  ![Testing Strategy 2](images/TestingStrategy2.png)
 
 ### Method 1
 
@@ -35,7 +35,7 @@
 
 * **Test Statistic**
 
-  ![Test Stat 5](TestStat5.png)
+  ![Test Stat 5](images/TestStat5.png)
 
 * Use t(n₁+n₂-2) distribution for critical value/ p-value.
 
@@ -49,11 +49,11 @@
 
 * **Test Statistic**
 
-  ![Test Stat 6](TestStat6.png)
+  ![Test Stat 6](images/TestStat6.png)
 
 * Use t(f) distribution for critical value/ p-value.
 
-  ![F Value](fValue.png)
+  ![F Value](images/fValue.png)
 
 ## Method 5 (paired)
 
@@ -63,7 +63,7 @@
 
 * **Test Statistic**
 
-  ![Test Stat 7](TestStat7.png)
+  ![Test Stat 7](images/TestStat7.png)
 
 * Use t(n-1) distribution for critical value/ p-value.
 
@@ -71,7 +71,7 @@
 
 * **Notations**
 
-  ![Notations2](Notations2.png)
+  ![Notations2](images/Notations2.png)
 
 * **To test**
   * H₀: σ₁² = σ₂²   H₁: σ₁² ≠  σ₂²
@@ -83,21 +83,21 @@
 
 * **Test Statistic**
 
-  ![Test Stat 8](TestStat8.png)
+  ![Test Stat 8](images/TestStat8.png)
 
 * For critical values, use Snedecor’s F distribution with degree of freedom (n1−1,n2−1).
 
 ### Two Tail Test
 
-  ![Two Tail Variance](TwoTailVar.png)
+  ![Two Tail Variance](images/TwoTailVar.png)
 
 ### Right Tail Test
 
-  ![Right Tail Variance](RightTailVar.png)
+  ![Right Tail Variance](images/RightTailVar.png)
 
 ### Left Tail Test
 
-  ![Left Tail Variance](LeftTailVar.png)
+  ![Left Tail Variance](images/LeftTailVar.png)
 
 * The F critical value is found from the F table
 * There are two appropriate degrees of freedom: numerator and denominator.
@@ -106,13 +106,13 @@
   * denominator degrees of freedom determine the row (denoted as n₂  or ν2 usually)
 * Also, note that:
 
-  ![F Value Alpha](FValueAlpha.png)
+  ![F Value Alpha](images/FValueAlpha.png)
 
 ## Hypothesis Testing for Differences of Proportions
 
 * **Notations**
 
-  ![Notations 3](Notations3.png)
+  ![Notations 3](images/Notations3.png)
 
 * **To test**
   * H₀: π₁  = π₂ H₁: π₁ ≠ π₂
@@ -124,15 +124,15 @@
 
 * **Test Statistic**
 
-  ![Test Stat 9](TestStat9.png)
+  ![Test Stat 9](images/TestStat9.png)
 
 * Use N(0,1) to obtain critical value/ p-value.
 * In most of the problems, 𝝅 is not known, so we use the estimate of 𝝅, given by :
 
-  ![Pi Estimate](piestimate.png)
+  ![Pi Estimate](images/piestimate.png)
 
 ## Summary of Testing Strategies
 
-  ![Test Summary](TestSummary.png)
+  ![Test Summary](images/TestSummary.png)
 
-  ![Test Summary2](TestSummary2.png)
+  ![Test Summary2](images/TestSummary2.png)

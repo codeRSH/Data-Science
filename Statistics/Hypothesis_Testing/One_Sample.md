@@ -43,7 +43,7 @@ A formal structure used to statistically (based on a sample) test the research h
 
 ## Errors in Decision Making
 
-  ![Errors](Errors.png)
+  ![Errors](images/Errors.png)
 
 * There are two Types of errors :
   * Type I Error : Reject H0, when it is right.
@@ -72,15 +72,15 @@ Critical value divides the whole area under probability curve into two regions:
 
 #### Two Tail Test
 
-  ![Two Tail](TwoTail.png)
+  ![Two Tail](images/TwoTail.png)
 
 #### Right Tail Test
 
-  ![Right Tail](RightTail.png)
+  ![Right Tail](images/RightTail.png)
 
 #### Left Tail Test
 
-  ![Left Tail](LeftTail.png)
+  ![Left Tail](images/LeftTail.png)
 
 ## Hypothesis Testing for μ (First Method)
 
@@ -91,7 +91,7 @@ Critical value divides the whole area under probability curve into two regions:
 * **Test Statistic**
   * Compute the value of test statistic using following formula:
 
-  ![Test Statistic](TestStat.png)
+  ![Test Statistic](images/TestStat.png)
 
 * **Level of Significance**
   * Fix the value of a, say 0.05 or 0.10
@@ -122,7 +122,7 @@ Critical value divides the whole area under probability curve into two regions:
 
 * Some useful Critical Values of N(0, 1) for comparision
 
-  ![Useful Critical Values](UsefulCritical.png)
+  ![Useful Critical Values](images/UsefulCritical.png)
 
 ### p-value Approach
 
@@ -143,7 +143,7 @@ Critical value divides the whole area under probability curve into two regions:
 * **Test Statistic**
   * Compute the value of test statistic using following formula:
 
-  ![Test Statistic 2](TestStat2.png)
+  ![Test Statistic 2](images/TestStat2.png)
 
 * **Level of Significance**
   * Fix the value of a, say 0.05 or 0.10
@@ -163,7 +163,7 @@ Critical value divides the whole area under probability curve into two regions:
   * Compute the value of test statistic using following formula.
   * Test Statistic Tc has t(n-1) distribution.
 
-  ![Test Statistic 3](TestStat3.png)
+  ![Test Statistic 3](images/TestStat3.png)
 
 * **Level of Significance**
   * Fix the value of a, say 0.05 or 0.10
@@ -171,9 +171,9 @@ Critical value divides the whole area under probability curve into two regions:
 * **Critical Values**
   * Critical values of t(n-1) distribution can be obtained from the t table for given d.f. and significance level.
 
-  ![T Tail Test](TTailTest.png)
+  ![T Tail Test](images/TTailTest.png)
 
-  ![T Tail Test 2](TTailTest2.png)
+  ![T Tail Test 2](images/TTailTest2.png)
 
 * We reject H0 in the favor of H1 at α x100% level
   * If |Tc| > tα/2 (for two tailed test)
@@ -192,7 +192,7 @@ Critical value divides the whole area under probability curve into two regions:
 
 ## Summary of Testing Strategy
 
-![Testing Strategy](TestingStrategy.png)
+![Testing Strategy](images/TestingStrategy.png)
 
 ## Hypothesis Testing of Population Proportion
 
@@ -216,7 +216,7 @@ A sample is selected from this population.
 
 * **Test Statistic**
 
-  ![Test Statistic 4](TestStat4.png)
+  ![Test Statistic 4](images/TestStat4.png)
 
 * Decision rules are the same as discussed earlier.
 * p – value approach can also be used.

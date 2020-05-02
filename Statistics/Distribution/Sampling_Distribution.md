@@ -5,14 +5,14 @@
 * Statistical measures computed using population observations.
 * Let X1, X2,…, XN are population units.
 
-![Parameter](Population.png)
+![Parameter](images/Population.png)
 
 ## Statistic
 
 * Statistical measures computed using sample observations.
 * Let x1, x2,…, xn are sample units.
 
-![Statistics](Sample.png)
+![Statistics](images/Sample.png)
 
 ## Sampling Distribution Definition
 
@@ -33,7 +33,7 @@
 * This result can also be written as :
 𝑍=(𝑥 ̅−𝜇)/(𝜎/√𝑛)~𝑁(0,1)
 
-![Central Limit](CentralLimit.png)
+![Central Limit](images/CentralLimit.png)
 
 Put another way, doesn't matter the type of original distribution (Normal, Uniform, Exponenetial etc) if the sample size n >= 30, then we consider that its mean will follow a normal distribution.
 
@@ -76,10 +76,10 @@ Let us take a sample x1, x2, x3,..., xn from N(μ,σ).
 
 Define the statistic
 
-![TDisribution](TDistribution.png)
+![TDisribution](images/TDistribution.png)
 
 Then T follows Student’s t Distribution with (n-1) d.f. and range (- ∞,∞).
 
 Note: t(n-1) →N(0,1)  as  n  increases
 
-![TDisribution2](TDistribution2.png)
+![TDisribution2](images/TDistribution2.png)

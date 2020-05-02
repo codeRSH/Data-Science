@@ -66,7 +66,7 @@ So, expected value of a random variable is the center of its distribution.
 
 Expectation or Expected value  or mean of a discrete random variable (r.v.)  X is defined as:
 
-![alt-text](Expectation.png)
+![Expectation](images/Expectation.png)
 
 For eg. If person gains 100 Rs. if at least one head comes and loses 200 Rs. if no head comes in a random experiment of toss of 2 coins.
 
@@ -85,9 +85,9 @@ Dispersion of a random variable X is measured by Variance. It is the expected sq
 
 Variance of random Variable X is given by :
 
-![alt-text](Variance.png)
+![Variance](images/Variance.png)
 
-Where, ![alt-text](Variance2.png)
+Where, ![Variance 2](images/Variance2.png)
 
 p(x) is the probability mass function of X.
 
@@ -107,7 +107,7 @@ Define a random variable X as the number of Successes in n trials.
 
 Then probability of getting a Successes out of n trials is given by :
 
-![alt-text](Binomial.png)
+![Binomial](images/Binomial.png)
 
 Conditioions :
 
@@ -127,11 +127,20 @@ P(X=a)  = binom.dist(a,n,p,0)
 P(X<=a) = binom.dist(a,n,p,1)
 ```
 
+**R Formula:**
+
+```R
+P(X<=k) = pbinom(k, n, p)
+P(X = k) = dbinom(k, n, p)
+
+k = qbinom(P, n, p)
+```
+
 ### Poisson Distrubtion
 
 When n -> infinity and p -> 0, we may approximate Binomial Distribution by Poisson Distribution.
 
-![alt-text](Poisson.png)
+![alt-text](images/Poisson.png)
 
 Where  (lambda) = n*p
 
@@ -173,11 +182,11 @@ Normal Distribution is known by its bell Curve. Most of the characteristics foll
 
 The mean and standard deviation define the characterstic of the Normal distrubtion.
 
-![Normal Dist](Normal.png)
+![Normal Dist](images/Normal.png)
 
 * The Probability is defined by the area under the curve.
 
-![Normal Area](NormalArea.png)
+![Normal Area](images/NormalArea.png)
 
 * Point Probility is 0 in Normal ditribution. Eg. P(X=20) = 0.
 * So it means in Normal Distribution:
@@ -198,6 +207,8 @@ k = norm.inv(p, mu, sigma) # To calculate k if probability given.
 **R Formula:**
 
 ```R
+P(X<=k) = pnorm(k, mu, sigma)
+
 k = qnorm(p,mu,sigma)
 ```
 
@@ -214,5 +225,4 @@ Define  Z = (𝑿−𝝁)/𝝈. Then Z ~ N(0, 1)
 
 Table of F(z) = P(Z <= z) are available.
 
-![Standard Area](StandardNormal.png)
-
+![Standard Area](images/StandardNormal.png)
