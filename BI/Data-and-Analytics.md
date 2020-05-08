@@ -75,10 +75,6 @@ This has been extended to a great extent!
 * Prediction
 * Segmentation
 
-### Data Analytics Process
-
-![Analytics Process](images/Process.png)
-
 ### Data Analytics Lifecycle
 
 ![Analytics Lifecycle](images/Lifecycle.png)
