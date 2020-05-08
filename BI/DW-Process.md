@@ -1,4 +1,4 @@
-# Data Warehousing and OLAP
+# Data Warehousing Process
 
 ## Retail Case Study
 
