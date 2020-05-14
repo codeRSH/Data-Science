@@ -1,0 +1,410 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+getwd()
+# setwd("C:/Users/Rsinghx0112806/Development/R Scripts/Advanced")
+# getwd()
+```
+
+```{r}
+# Basic Read : 
+# fin <- read.csv("P3-Future-500-The-Dataset.csv")
+
+# New Read : Replace blan values with NA
+fin <- read.csv("Data/P3-Future-500-The-Dataset.csv", na.strings = "")
+fin
+```
+```{r}
+dim(fin)
+```
+```{r}
+tail(fin, 10)
+```
+
+
+```{r}
+str(fin)
+```
+
+
+```{r}
+summary(fin)
+```
+
+
+```{r}
+head(fin)
+```
+
+```{r}
+# Converting a Non-Factor to a Factor
+fin$ID
+fin$ID <- factor(fin$ID)
+
+fin$ID
+```
+
+
+```{r}
+summary(fin$ID)
+```
+```{r}
+str(fin$ID)
+```
+
+
+```{r}
+fin$Inception <- factor(fin$Inception)
+fin$Inception
+```
+
+
+```{r}
+summary(fin$Inception)
+```
+
+```{r}
+# Factor Variable Trap - Converting Factor to Non Factor
+
+
+# Converting Characters into Numerics
+a <- c("12", "13", "14", "12", "12")
+a
+typeof(a)
+```
+
+
+```{r}
+b <- as.numeric(a)
+b
+typeof(b)
+```
+
+
+```{r}
+# Converting Factors into Numerics. 
+z <- factor(c("12", "13", "14", "12", "12"))
+z
+typeof(z)
+```
+
+
+```{r}
+# Converting the Factors directly into numberic will convert its level rather than actual value!
+y <- as.numeric(z)
+y
+typeof(y)
+```
+
+
+```{r}
+# Correct way : 
+x <- as.numeric(as.character(z))
+x
+typeof(x)
+```
+
+
+```{r}
+
+# --- sub() and gsub() : Sub replaces only first character, gsub all characters
+head(fin)
+```
+```{r}
+# gsub() also converts the factor into character vector
+fin$Revenue <- gsub("\\$", "", fin$Revenue)  # Escape Sequence necessary for $
+fin$Revenue <- gsub(",", "", fin$Revenue)
+
+head(fin)
+
+str(fin)
+```
+
+```{r}
+fin$Expenses <- gsub(" Dollars", "", fin$Expenses)
+fin$Expenses <- gsub(",", "", fin$Expenses )
+head(fin)
+str(fin)
+```
+```{r}
+
+fin$Growth <- gsub("%", "", fin$Growth)
+head(fin)
+str(fin)
+
+```
+```{r}
+# Converting to numeric easier as the values are already in Character vectors
+fin$Revenue <- as.numeric(fin$Revenue)
+fin$Expenses <- as.numeric(fin$Expenses)
+fin$Growth <- as.numeric(fin$Growth)
+
+head(fin)
+str(fin)
+```
+
+
+```{r}
+summary(fin)
+```
+```{r}
+# What is NA
+
+?NA
+
+
+TRUE #1
+FALSE #0
+NA
+```
+
+
+```{r}
+TRUE == TRUE
+TRUE == T
+TRUE == 5
+TRUE == 1
+```
+
+```{r}
+FALSE == 4
+FALSE == F
+FALSE == 0
+```
+
+```{r}
+NA == TRUE
+NA == FALSE
+NA == 15
+15 == NA
+NA == NA
+```
+
+```{r}
+# Locating Missing Values
+head(fin, 24)
+```
+
+
+```{r}
+complete.cases(fin)  # Rows with all values filled (i.e. no values is NA)
+```
+
+```{r}
+fin[!complete.cases(fin), ]
+```
+```{r}
+str(fin)
+```
+
+```{r}
+
+# Filtering: using which() for non-missing values
+head(fin)
+fin[fin$Revenue ==  9746272 , ]
+
+```
+
+```{r}
+
+# which() Returns the vector of row numbers which are TRUE as per the condition
+which(fin$Revenue ==  9746272)  
+```
+
+```{r}
+
+fin[which(fin$Revenue ==  9746272)]
+```
+
+```{r}
+fin[fin$Employees == 45, ]
+```
+
+```{r}
+
+
+which(fin$Employees == 45)
+fin[which(fin$Employee == 45), ]
+
+
+# Filtering : using is.na() for missing data
+head(fin, 24)
+
+# Wrong way to chec for NA values. 
+fin$Expenses == NA
+fin[fin$Expenses == NA, ]
+
+a <- c(1,5 , NA, 234, NA, 23)
+is.na(a)
+
+
+is.na(fin$Expenses)
+fin[is.na(fin$Expenses), ]
+
+fin[is.na(fin$Employees), ]
+
+
+# Removing records with missing data
+
+# It's a good practice to keep a backup of data in between in case we make a mistake further down
+fin_backup <- fin
+# fin <- fin_backup
+
+fin[!complete.cases(fin), ]
+
+fin[is.na(fin$Industry), ]
+fin <- fin[!is.na(fin$Industry), ] # Remove missing value by doing the opposite of NA
+
+fin[!complete.cases(fin), ]
+
+
+# Resetting the dataframe index
+fin
+rownames(fin) <- 1:nrow(fin)
+fin
+
+tail(fin)
+rownames(fin) <- NULL
+tail(fin)
+
+# Replacing Missing Data : Factual Analysis
+fin[!complete.cases(fin), ]
+
+# a <- fin[is.na(fin$State), ]
+# a[a$City == "New York", ] <- "Yo"
+# a <- "Yo"
+# a
+
+fin[is.na(fin$State),  ]
+fin[is.na(fin$State) & fin$City == "New York", "State"] <- "NY"
+
+# Check
+fin[c(11, 377), ]
+
+fin[!complete.cases(fin), ]
+fin[is.na(fin$State), ]
+fin[is.na(fin$State) & fin$City == "San Francisco", "State"] <- "CA"
+fin[c(82, 265), ]
+# check
+fin[!complete.cases(fin), ]
+
+fin
+
+
+# Replacing Missing Data : Median Imputation Method
+
+fin[!complete.cases(fin), ]
+
+# To calculate mean just replain median() with mean() function below
+
+# Median for all employees after removing NA values 
+median(fin[, "Employees"], na.rm = TRUE )
+
+# Always good practice to store the intermediate calculated values
+# in a separate variable before passing it on the actual dataset. 
+med_emp_retail <- median(fin[fin$Industry == "Retail", "Employees"], na.rm = TRUE )
+med_emp_retail
+
+fin[is.na(fin$Employees) & fin$Industry == "Retail", "Employees" ] <- med_emp_retail
+
+# Check : 
+fin[3, ]
+
+
+fin[!complete.cases(fin), ]
+
+med_emp_fs <- median(fin[fin$Industry == "Financial Services", "Employees"], na.rm = TRUE )
+fin[is.na(fin$Employees) & fin$Industry == "Financial Services", "Employees" ] <- med_emp_fs
+
+# Check : 
+fin[330, ]
+
+fin[!complete.cases(fin), ]
+
+
+median(fin[, "Growth"], na.rm = TRUE )
+med_growth_construction <- median(fin[fin$Industry == "Construction", "Growth"], na.rm = TRUE )
+med_growth_construction
+
+fin[is.na(fin$Growth) & fin$Industry == "Construction", "Growth" ] <- med_growth_construction
+
+# Check : 
+fin[8, ]
+
+
+# Calculuate Median Revenue
+fin[!complete.cases(fin), ]
+
+
+med_revenue_construction <- median(fin[fin$Industry == "Construction", "Revenue"], na.rm = TRUE )
+med_revenue_construction
+
+fin[is.na(fin$Revenue) & fin$Industry == "Construction", "Revenue"] <- med_revenue_construction
+
+# check : 
+fin[c(8, 42), ]
+
+
+# Calculate Median Expenses
+fin[!complete.cases(fin), ]
+med_exp_construction <- median(fin[fin$Industry == "Construction", "Expenses"], na.rm = TRUE )
+med_exp_construction
+
+fin[is.na(fin$Expenses) & fin$Industry == "Construction" & is.na(fin$Profit) , "Expenses"] <- med_exp_construction
+
+# check : 
+fin[c(8, 42), ]
+
+fin[!complete.cases(fin), ]
+
+
+
+# Replacing Missing Data : deriving values 
+
+# Profit = Revenue - Expenses 
+
+# fin_na_profit <- fin[is.na(fin$Profit), ]
+# fin_na_profit
+# 
+# fin_na_profit$Profit <- fin_na_profit$Revenue - fin_na_profit$Expenses
+
+fin[is.na(fin$Profit), "Profit"] <- fin[is.na(fin$Profit), "Revenue"] - fin[is.na(fin$Profit), "Expenses"]
+fin[c(8,42), ]
+
+fin[!complete.cases(fin), ]
+
+# Expenses = Revenue - Profit
+fin[is.na(fin$Expenses), "Expenses" ] <- fin[is.na(fin$Expenses), "Revenue"] - fin[is.na(fin$Expenses), "Profit"]
+
+fin[15, ]
+
+
+
+# Visualizing Results
+
+library(ggplot2)
+# Visualization 1 : Scatter Plot 
+p <- ggplot(data = fin)
+p + geom_point(aes(x = Revenue, y = Expenses, size = Profit, color = Industry ))
+
+# Visualization 2 : Checking Trends
+d <- ggplot(data = fin, aes(x = Expenses, y = Revenue, color = Industry ))
+
+d + geom_point() + geom_smooth()
+d + geom_point() + geom_smooth(fill = NA, size = 1.2)
+
+
+# Visualization 3 : Boxplots showing growth by industry
+
+f <- ggplot(data = fin, aes(x = Industry, y = Growth, color = Industry))
+f + geom_boxplot(size = 1)
+
+
+# Extra : 
+  f + geom_jitter() + geom_boxplot(size = 1, alpha = 0.6, outlier.colour =  NA)
+  
+```
+
