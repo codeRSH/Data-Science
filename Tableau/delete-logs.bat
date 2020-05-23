@@ -1,0 +1,1 @@
+RD /S /Q "C:\Users\ravs\Development\Data-Science\Tableau\Logs"
